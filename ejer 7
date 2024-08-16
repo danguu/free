@@ -1,3 +1,18 @@
+def son_iguales_iterativo(array1, array2):
+    # Caso base: si las longitudes son diferentes, los arreglos no pueden ser iguales
+    if len(array1) != len(array2):
+        return False
+    # Recorremos ambos arreglos
+    for i in range(len(array1)):
+        if array1[i] != array2[i]:
+            return False
+    return True
+
+# Test Iterativo
+array1 = [2, 4, 6, 8, 9]
+array2 = [2, 4, 6, 8, 9]
+print("Iterativo:", "Los arreglos son iguales." if son_iguales_iterativo(array1, array2) else "Los arreglos no son iguales.")
+
 def son_iguales_recursivo(array1, array2, index=0):
     # Caso base: si hemos recorrido todos los elementos
     if index == len(array1):
