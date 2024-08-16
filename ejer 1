@@ -1,0 +1,11 @@
+def multi(p, q):
+    if q == 0:
+        return 0
+    else:
+        return p + multi(p, q - 1)
+
+# Ejemplo de uso
+p = 5
+q = 3
+resultado = multi(p, q)
+print(f"La multiplicación de {p} y {q} es: {resultado}")
