@@ -1,0 +1,10 @@
+def find_combinations_with_repetition(nums, k):
+    combinations = []
+    find_combinations(nums, k, 0, [], combinations)
+    return combinations
+
+# Ejemplo de uso
+nums = [1, 2, 3, 4]
+k = 2
+combinations = find_combinations_with_repetition(nums, k)
+print(combinations)
