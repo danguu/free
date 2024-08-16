@@ -1,0 +1,28 @@
+ def suma_pares_recursiva(n):
+    # Caso base
+    if n <= 1:
+        return 0
+    # Caso recursivo
+    if n % 2 == 0:
+        return n + suma_pares_recursiva(n - 2)
+    else:
+        return suma_pares_recursiva(n - 1)
+
+# Test de la función recursiva
+print(suma_pares_recursiva(10))  # Salida: 30
+print(suma_pares_recursiva(5))   # Salida:
+
+def suma_pares_iterativa(n):
+    suma = 0
+    # Si n es impar, lo hacemos par
+    if n % 2 != 0:
+        n -= 1
+    # Recorremos los números pares hacia abajo
+    while n >= 2:
+        suma += n
+        n -= 2
+    return suma
+
+# Test de la función iterativa
+print(suma_pares_iterativa(10))  # Salida: 30
+print(suma_pares_iterativa(5))   # Salida: 6
