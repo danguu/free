@@ -1,0 +1,31 @@
+def suma_digitos_pares_iterativa(n):
+    """
+    Función iterativa que recibe un número entero positivo y retorna la suma de sus dígitos pares.
+    """
+    suma = 0
+    while n > 0:
+        digito = n % 10
+        if digito % 2 == 0:
+            suma += digito
+        n //= 10
+    return suma
+
+def suma_digitos_pares_recursiva(n):
+    """
+    Función recursiva que recibe un número entero positivo y retorna la suma de sus dígitos pares.
+    """
+    if n == 0:
+        return 0
+    digito = n % 10
+    if digito % 2 == 0:
+        return digito + suma_digitos_pares_recursiva(n // 10)
+    else:
+        return suma_digitos_pares_recursiva(n // 10)
+
+# Test
+numero1 = 16582234
+numero2 = 13553
+print(f"La suma de los dígitos pares de {numero1} es: {suma_digitos_pares_iterativa(numero1)}")
+print(f"La suma de los dígitos pares de {numero2} es: {suma_digitos_pares_iterativa(numero2)}")
+print(f"La suma de los dígitos pares de {numero1} es: {suma_digitos_pares_recursiva(numero1)}")
+print(f"La suma de los dígitos pares de {numero2} es: {suma_digitos_pares_recursiva(numero2)}")
