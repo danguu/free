@@ -1,0 +1,14 @@
+def son_iguales_recursivo(array1, array2, index=0):
+    # Caso base: si hemos recorrido todos los elementos
+    if index == len(array1):
+        return True
+    # Si los elementos en la posición actual no son iguales
+    if array1[index] != array2[index]:
+        return False
+    # Caso recursivo: verificamos el siguiente elemento
+    return son_iguales_recursivo(array1, array2, index + 1)
+
+# Test Recursivo
+array1 = [2, 4, 6, 8, 9]
+array2 = [2, 4, 6, 8, 9]
+print("Recursivo:", "Los arreglos son iguales." if son_iguales_recursivo(array1, array2) else "Los arreglos no son iguales.")
