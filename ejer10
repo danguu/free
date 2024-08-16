@@ -1,0 +1,14 @@
+def encontrar_combinaciones(n, resultado_actual=[]):
+    # Caso base: si la suma de la combinación es igual a 'n'
+    if sum(resultado_actual) == n:
+        print(resultado_actual)
+        return
+
+    # Caso recursivo: probamos todos los números posibles entre 1 y n
+    for i in range(1, n + 1):
+        # Si la suma actual + i no supera a n, hacemos una llamada recursiva
+        if sum(resultado_actual) + i <= n:
+            encontrar_combinaciones(n, resultado_actual + [i])
+
+# Test con n=5
+encontrar_combinaciones(5)
