@@ -13,3 +13,21 @@ void selection_sort(int *vector, int taille)
           vector[mas_pequeno] = temp;
      }
 }
+
+void selection_sort(int vector[], int taille, int actual) {
+    if (actual >= taille - 1)
+        return;
+
+    int mas_grande = actual;
+    for (int j = actual + 1; j < taille; j++) {
+        if (vector[j] > vector[mas_grande])
+            mas_grande = j;
+    }
+
+    int temp = vector[actual];
+    vector[actual] = vector[mas_grande];
+    vector[mas_grande] = temp;
+
+    selection_sort_recursive(vector, taille, actual + 1);
+}
+
